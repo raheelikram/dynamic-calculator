@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>Math equation</title>
+  <!-- Latest compiled and minified jquery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified angular -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+
+  <!-- Load bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body ng-controller="ctrl">
+  <h1>Math Equation Finder</h1>
+  <div class="container">
+    <div ng-show="msg" class="alert alert-info" id="msg">{{msg}}</div>
+    <div class="row">
+      <div class="col-md-10"> <input type="text" value="w=m*g" ng-model="input" class="form-control" id="input" placeholder="Math Equation"> </div>
+      <div class="col-md-2"> <button type="button" ng-click="buildTree()" class="btn btn-primary">OK</button> </div>
+    </div>
+    <div class="row" >
+      <h2>Available Variables are</h2>
+      <div class="form" role="form">
+        <div class="form-group" ng-repeat="(key, val) in vars" >
+          <label>{{key}}</label>
+          <input type="text" ng-model="vars[key]" class="form-control" placeholder="Enter value of {{key}}">
+        </div>
+        <br/><br/>
+        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+      </div>
+    </div>
+    <div class="row">
+      <h2>Result of {{target}} is <button class="btn btn-primary btn-xs" ng-click="getResult(target)">Recalculate</button> </h2> 
+      <strong>{{fm[target]}}</strong>
+    </div>
+  </div>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
