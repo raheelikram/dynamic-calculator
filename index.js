@@ -1,7 +1,7 @@
 angular.module('app', [])
 .controller('ctrl', ['$scope', '$timeout', function ($scope, $timeout) {
   $scope.vars = {};
-  $scope.input = "w=m*g";
+  $scope.input = "Force=Mass*Acceleration";
   $scope.getResult = getResult;
   
   // showMsg("Test message");
